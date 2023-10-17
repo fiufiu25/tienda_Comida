@@ -1,0 +1,139 @@
+.btnicon{
+  border-radius:7px 7px 13px 13px;
+}
+body{
+  
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+  font-family:Poppins,Arial,Helvetica,sans-serif;
+}
+.data{
+   box-shadow: 0 10px 20px rgba(0,0,0,.1);
+   height:max-content;
+   
+  }
+.data:hover img{
+  scale: 1.1;
+  
+}
+img{
+  transition: 300ms ;
+  border-radius: 10px 10px 0 0;
+}
+.letras{
+  -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color:#666657;
+    display: -webkit-box;
+    font-size: .8rem;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+.menu{
+  font-family: Smooch,cursive;
+  color: rgb(255, 136, 0);
+}
+.iconos_menu>div {
+  background: #fff;
+  border-radius:20px;
+  box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+  color: #3f3f3f;
+  cursor: pointer;
+  
+
+  gap: 0.3rem;
+  padding: 0rem 0.5rem;
+  transition: .3s;
+}
+.iconos_menu>div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+   gap: 1rem;
+  
+}
+.iconos_menu p{
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+}
+.card-items{
+  grid-gap: 40px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,-webkit-max-content));
+  grid-template-columns: repeat(auto-fit,minmax(250px,max-content));
+  justify-content: center;
+  padding-bottom: 10rem;
+}
+.iconos_menu .active{
+  background:rgb(255,136,0);
+  color: white;
+}
+.iconos_menu{
+
+  padding: 10px;
+  display:flex;
+gap: 15px;
+justify-content: center;
+align-items: center;
+
+  
+}
+@media (max-width:600px) {
+  .iconos_menu{
+    justify-content:left;
+  
+  
+   overflow: hidden;
+   overflow-x: scroll;
+   -webkit-overflow-scrolling: touch;
+   flex-wrap: nowrap;
+   gap: 2rem;
+   
+   scroll-behavior: smooth;
+  
+  
+  }
+  
+}
+.textarea-active{
+  word-wrap: break-word;
+    box-sizing: border-box;
+    height: 86px;
+    overflow: auto;
+    padding: 0.3rem;
+    resize: none;
+    white-space: pre-wrap;
+    width: 80%;
+    background-color: black;
+    color: white;
+    
+   
+}
+
+.textarea{
+  word-wrap: break-word;
+  box-sizing: border-box;
+  height: 86px;
+  overflow: auto;
+  padding: 0.3rem;
+  resize: none;
+  white-space: pre-wrap;
+  width: 80%;
+}
+.tienda{
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  right:60px;
+  transform: translateX(1000%);
+  transition:  3000ms;
+}
+.tiendaActive{
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  right:60px;
+  transform: translateX(0);
+  transition:  1000ms;
+}
