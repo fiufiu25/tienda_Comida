@@ -127,7 +127,7 @@ flex-wrap: wrap;
 }
 .tienda{
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
-  right:60px;
+  right:40px;
   transform: translateX(200%);
   transition:  500ms;
 }

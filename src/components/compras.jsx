@@ -8,7 +8,7 @@ export default function Compras({dark}) {
 
  const dispatch=useDispatch()
     const {abrirtienda,enviarcarrito,pTotal}=useSelector(state=>state.tienda)
-    console.log(enviarcarrito)
+    
      const eliminarcomida=(id)=>{
         dispatch(eliminar(id))
      }
@@ -56,7 +56,7 @@ export default function Compras({dark}) {
    </Box>
    
         </Box>
-        <IconButton onClick={()=>eliminarcomida(item.id)}><CloseIcon sx={{color:"rgb(255, 136, 0)"}}/> </IconButton>
+        <IconButton onClick={()=>eliminarcomida(item.idMeal)}><CloseIcon sx={{color:"rgb(255, 136, 0)"}}/> </IconButton>
       
     
         
