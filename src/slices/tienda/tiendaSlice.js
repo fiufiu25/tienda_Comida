@@ -153,7 +153,7 @@ state.pTotal=data
     },
     eliminar:(state,action)=>{
      const data=action.payload;
-     state.enviarcarrito=state.enviarcarrito.filter(item=>item.id!==data)
+     state.enviarcarrito=state.enviarcarrito.filter(item=>item.idMeal!==data)
     },
     titleCategoria:(state,action)=>{
       const data=action.payload;
