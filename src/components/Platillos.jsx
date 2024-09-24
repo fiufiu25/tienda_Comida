@@ -1,22 +1,35 @@
 import { Box } from '@mui/material'
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { fetchCategoria } from  "../hooks/api.js"
+import { useDispatch } from 'react-redux'
+import { titleCategoria } from '../slices/tienda/tiendaSlice.js'
 export default function Platillos() {
-    const platos=[
-        {name:"platillos"},{name:"Pizzas"},{name:"Hamburguesas"},{name:"Bebidas"},{name:"Postres"}
-    ]
-    const [indice,setindice]=useState(0)
+    const dispatch=useDispatch()
+
+    const [platos,setplatos]=useState("")
+  
+    useEffect(()=>{
+        const traerdatos=async()=>{
+          const datos= await fetchCategoria();
+          
+          setplatos(datos)
+        }
+        traerdatos()
+        },[])
+  
+    const [indice,setindice]=useState(1)
     const cambio=(index)=>{
- setindice(index)
+ setindice(index.idCategory)
+  dispatch(titleCategoria(index.strCategory))
     }
   return (
     <>
     <Box className="iconos_menu" >
     {
-        platos.map((item,index)=>(
+       platos&& platos.map((item)=>(
 
-    <Box onClick={()=>cambio(index)} key={index} className={`${indice==index?"active":""}`}>
-        <p>{item.name}</p>
+    <Box onClick={()=>cambio(item)} key={item.idCategory} className={`${indice==item.idCategory?"active":""}`}>
+        <p>{item.strCategory}</p>
     </Box>
    
    

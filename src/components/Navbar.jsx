@@ -48,7 +48,7 @@ dispatch(precioTotal(totalCarrito))
          <Box sx={{width:30,height:30,position:"relative",cursor:"pointer"}} onClick= {istienda}   >
             <ShoppingBagOutlinedIcon  sx={{width:30,height:30,color:`${dark?"black":"white"}`}}/>
             <Typography variant='body1' sx={{position:"absolute",bottom:-5,right:-5,bgcolor:"rgb(255,136,0)",width:20,height:20,borderRadius:"50%",fontSize:12,display:"grid",placeItems:"center",color:"black"
-            ,fontWeight:700}} >{cTotal}</Typography >
+            ,fontWeight:700}} >{enviarcarrito.length}</Typography >
             </Box>
         </Toolbar>
       </AppBar>

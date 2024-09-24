@@ -72,7 +72,8 @@ const initialState = {
   ],
   cTotal:0,
   pTotal:0,
-  abrirtienda:false
+  abrirtienda:false,
+  categoria:"Beef"
 
 }
 
@@ -97,7 +98,9 @@ export const tiendaSlice = createSlice({
      })
    },
    recibirdatos:(state,action)=>{
+    console.log(action.payload)
     state.carrito=action.payload
+     
    
    } ,
    aumentar:(state,action)=>{
@@ -124,11 +127,11 @@ export const tiendaSlice = createSlice({
     },
     enviardata:(state,action)=>{
         const newData = action.payload;
-        const datos=state.enviarcarrito.find(item=> item.id==newData.id)
+        const datos=state.enviarcarrito.find(item=> item.idMeal==newData.idMeal)
         if(datos){
         
          
-          datos.cantidad += 1;
+          datos.cantidad =datos.cantidad+newData.cantidad;
         
         }
         
@@ -151,12 +154,20 @@ state.pTotal=data
     eliminar:(state,action)=>{
      const data=action.payload;
      state.enviarcarrito=state.enviarcarrito.filter(item=>item.id!==data)
+    },
+    titleCategoria:(state,action)=>{
+      const data=action.payload;
+      state.categoria=data;
     }
 
+
 },
+    
 
 })
 
 // Action creators are generated for each case reducer function
-export const {menos,mas,recibirdatos,aumentar,disminuir,descripcion ,enviardata,cantidadTotal,precioTotal,modificarstado,eliminar} = tiendaSlice.actions
+export const {menos,mas,recibirdatos,aumentar,
+  disminuir,descripcion ,enviardata,cantidadTotal,
+  precioTotal,modificarstado,eliminar,titleCategoria} = tiendaSlice.actions
 
